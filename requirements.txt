@@ -1,0 +1,6 @@
+toml~=0.10.2
+imap-tools~=1.0.0
+python-telegram-bot[all]~=20.1
+pyproj~=3.4.1
+pytesseract~=0.3.10
+pdf2image~=1.16.3

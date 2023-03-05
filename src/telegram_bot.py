@@ -16,23 +16,20 @@ logging.basicConfig(
 
 
 def register_user(chat_id: int):
-    database_file = "user_database.txt"
     user_database: [int] = get_registered_users()
-
     user_database.append(chat_id)
-    user_database = list(dict.fromkeys(user_database))
+    user_database = list(dict.fromkeys(user_database))  # deduplicate
     user_database.sort()
 
-    with open(database_file, 'w') as f:
+    with open(settings.config['telegram']['database_file_path'], 'w') as f:
         for user in user_database:
             f.write(str(user) + '\n')
 
 
 def get_registered_users() -> [int]:
-    database_file = "user_database.txt"
     user_database: [int] = []
-    if os.path.isfile(database_file):
-        with open('user_database.txt', 'r') as f:
+    if os.path.isfile(settings.config['telegram']['database_file_path']):
+        with open(settings.config['telegram']['database_file_path'], 'r') as f:
             for line in f:
                 user_database.append(int(line))
     return user_database
