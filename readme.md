@@ -110,4 +110,4 @@ It can be read and understood by a non-tech-savvy person in a matter of seconds,
 and is available on their phone at all times, even after a loss of internet connectivity.
 
 All of this was built and deployed on a single weekend, with about 20 engineering hours.
-It is now running in production, without incident or maintenance, for almost one year.
+It is now running in production, without incident, maintenance or downtime, for almost two years.
